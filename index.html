@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Study Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Light Study</h1>
+    <p>Select a floor plan and click on a logger location to view seasonal data.</p>
+
+    <!-- Floor Tabs -->
+    <div class="tabs">
+        <div class="tab active" onclick="showFloor('5')">5th Floor</div>
+    </div>
+
+    <!-- Floor Plan Container -->
+    <div class="floor-plan-container">
+        <div id="floor-5" class="floor-plan">
+            <img src="Floor_Plan_Page_5.png" alt="5th Floor">
+            <div class="logger" style="top: 220px; left: 400px;" onclick="selectLogger('5.4_G500_Southwest_Wall')"></div>
+        </div>
+    </div>
+
+    <!-- Logger Data Section -->
+    <div id="logger-data">
+        <h2 id="logger-title">Logger Data</h2>
+        <div class="season-tabs">
+            <div class="season-tab active" onclick="showSeason('Spring')">Spring</div>
+            <div class="season-tab" onclick="showSeason('Summer')">Summer</div>
+            <div class="season-tab" onclick="showSeason('Fall')">Fall</div>
+            <div class="season-tab" onclick="showSeason('Winter')">Winter</div>
+        </div>
+        <input type="file" id="file-input" accept=".xlsx" onchange="handleFile(event)">
+        <button class="upload-button" onclick="document.getElementById('file-input').click();">Upload Excel File</button>
+        <div id="chart-container"></div>
+        <p id="error-message">Data could not be loaded.</p>
+    </div>
+
+    <script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
