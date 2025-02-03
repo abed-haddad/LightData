@@ -32,10 +32,8 @@
             <div class="season-tab" onclick="showSeason('Fall')">Fall</div>
             <div class="season-tab" onclick="showSeason('Winter')">Winter</div>
         </div>
-        <input type="file" id="file-input" accept=".xlsx" onchange="handleFile(event)">
-        <button class="upload-button" onclick="document.getElementById('file-input').click();">Upload Excel File</button>
         <div id="chart-container"></div>
-        <p id="error-message">Data could not be loaded.</p>
+        <p id="error-message" style="color: red; display: none;">Data could not be loaded.</p>
     </div>
 
     <script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
